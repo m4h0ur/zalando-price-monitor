@@ -21,7 +21,7 @@ A Telegram bot that monitors product prices on Zalando.nl, alerting users when p
 
 1. Clone the repository
 ```bash
-git clone https://github.com/mhh0ur/zalando-price-monitor.git
+git clone https://github.com/m4h0ur/zalando-price-monitor.git
 cd zalando-price-monitor
 ```
 
