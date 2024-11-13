@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  zalando-price-monitor:
+    build: .
+    container_name: zalando-price-monitor
+    environment:
+      - TELEGRAM_BOT_TOKEN=Your_Telegram_Token
+      - CHECK_INTERVAL=3600
+      - DEBUG_MODE=true
+      # Add longer intervals to avoid blocking
+      - INITIAL_DELAY=30
+      - RANDOM_DELAY_MIN=10
+      - RANDOM_DELAY_MAX=20
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
